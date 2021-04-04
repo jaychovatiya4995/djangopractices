@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Stream</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+    
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+        <tr>  
+            <th>Stream ID</th>  
+            <th>Name</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        {% for stream in streams %}  
+        <tr>  
+            <td>{{ stream.stream_id }}</td>  
+            <td>{{ stream.stream_name }}</td> 
+            <td>  
+                <a href="/edit_stream/{{ stream.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+                <a href="/delete_stream/{{ stream.id }}">Delete</a>  
+            </td>  
+        </tr>  
+        {% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/add_stream" class="btn btn-primary">Add New Record</a></center>  
+</body>  
+</html>

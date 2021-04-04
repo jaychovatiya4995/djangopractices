@@ -1,0 +1,60 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Add Student</title>  
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/add_student/">  
+        {% csrf_token %}  
+    <div class="container">  
+        <br>  
+        <div class="form-group row">  
+            <label class="col-sm-1 col-form-label"></label>  
+            <div class="col-sm-4">  
+                <h3>Students</h3>  
+            </div>  
+        </div>  
+        <div class="form-group row">  
+            <label class="col-sm-2 col-form-label">Student Id:</label>  
+            <div class="col-sm-4">  
+                {{ form.studid }} 
+            </div>  
+        </div>  
+        <div class="form-group row">  
+            <label class="col-sm-2 col-form-label">Student Name:</label>  
+            <div class="col-sm-4">  
+                {{ form.studename }}  
+            </div>  
+        </div>  
+        <div class="form-group row">  
+            <label class="col-sm-2 col-form-label">Student City:</label>  
+            <div class="col-sm-4">  
+                {{ form.studcity }}  
+            </div>  
+        </div>  
+    
+        <div class="form-group row">  
+            <label class="col-sm-1 col-form-label"></label>  
+            <div class="col-sm-4">  
+                <button type="submit" class="btn btn-primary">Submit</button>  
+            </div>  
+        </div>  
+    </div>  
+</form>  
+<form method="POST" class="post-form" action="/show_student/">  
+    {% csrf_token %}  
+
+    <div class="form-group row">  
+        <label class="col-sm-1 col-form-label"></label>  
+        <div class="col-sm-4">  
+            <button type="submit" class="btn btn-primary">BACK</button>  
+        </div>  
+    </div>  
+
+
+</form>
+</body>  
+</html>
